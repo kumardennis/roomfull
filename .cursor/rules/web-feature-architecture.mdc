@@ -1,0 +1,34 @@
+---
+description: Web feature layer architecture — store, orchestration, hooks, repo, UI
+globs: web/src/features/**/*
+alwaysApply: false
+---
+
+# Web feature architecture
+
+Every feature under `web/src/features/<name>/` follows this layout:
+
+```
+features/<name>/
+├── store/<name>.store.ts           # Zustand state + patch/reset only
+├── orchestration/<name>.orchestrator.ts  # Logic; calls repo, store, chrome
+├── hooks/use-<name>-screen.ts      # React: subscribe, lifecycle, routing
+├── repo/<name>.repo.ts             # Supabase RPC only
+├── ui/<name>-screen.tsx            # Presentational; uses hook
+├── <name>.routes.tsx
+└── index.ts
+```
+
+## Rules
+
+- **Store**: serializable UI state, `patch`, `reset`. No RPC, no `navigate`, no toasts.
+- **Orchestration**: async work, error handling, patching store. Returns hints (`needsOpener`, `matchId`) — not side effects.
+- **Hook**: `usePlayStore` + effects (poll, realtime, redirect). Passes orchestrator methods to UI.
+- **Repo**: `callRpc` only. No React, no Zustand.
+- **UI**: render + event handlers via hook. No direct repo/store/orchestrator imports.
+
+## Reference
+
+`features/play/` is the canonical example.
+
+Do not add `controller/` folders. Rename to `orchestration/` + `hooks/`.

@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+node_modules/
+scheduler/node_modules/
+web/node_modules/
+web/dist/
+dist/
+.DS_Store
