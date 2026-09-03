@@ -33,7 +33,10 @@ async function ensureRealtimeReady() {
 }
 
 function messageFromPostgresPayload(payload: { new: Record<string, unknown> }): RealtimeMessage | null {
-  const record = payload.new
+  return messageFromRecord(payload.new)
+}
+
+function messageFromRecord(record: Record<string, unknown> | null | undefined): RealtimeMessage | null {
   if (!record?.id || !record?.match_id || !record?.sender_id || !record?.body) return null
 
   return {
@@ -61,12 +64,36 @@ async function subscribePostgresChannel(
   const channelName = uniqueChannelName(name)
   const channel = bind(supabase.channel(channelName))
 
+  return subscribeChannel(channel, { debugLabel, logicalChannel: name, channelName })
+}
+
+async function subscribePrivateBroadcastChannel(
+  topic: string,
+  bind: (channel: RealtimeChannel) => RealtimeChannel,
+  debugLabel?: string,
+): Promise<RealtimeChannel> {
+  await ensureRealtimeReady()
+
+  // Topic must match DB trigger (e.g. match:{id}) for Realtime Authorization RLS.
+  const channel = bind(
+    supabase.channel(topic, {
+      config: { private: true },
+    }),
+  )
+
+  return subscribeChannel(channel, { debugLabel, logicalChannel: topic, channelName: topic })
+}
+
+function subscribeChannel(
+  channel: RealtimeChannel,
+  meta: { debugLabel?: string; logicalChannel: string; channelName: string },
+): Promise<RealtimeChannel> {
   return new Promise((resolve, reject) => {
     channel.subscribe((status, err) => {
-      if (debugLabel) {
-        chatRtLog(`${debugLabel}: postgres subscribe`, {
-          logicalChannel: name,
-          channel: channelName,
+      if (meta.debugLabel) {
+        chatRtLog(`${meta.debugLabel}: subscribe`, {
+          logicalChannel: meta.logicalChannel,
+          channel: meta.channelName,
           status,
           error: err instanceof Error ? err.message : err,
         })
@@ -107,9 +134,30 @@ export const realtimeService = {
         )
         .on(
           'postgres_changes',
+          {
+            event: 'UPDATE',
+            schema: 'public',
+            table: 'vibes',
+            filter: `to_participant=eq.${participantId}`,
+          },
+          (payload) => {
+            if (!payload.new) return
+            const next = payload.new as RealtimeVibe
+            if (next.status !== 'pending') return
+            const prev = payload.old as RealtimeVibe | undefined
+            // Re-send after pass/expired updates the same row instead of inserting.
+            if (prev?.status === 'pending') return
+            handlers.onVibe?.(next)
+          },
+        )
+        .on(
+          'postgres_changes',
           { event: 'INSERT', schema: 'public', table: 'messages' },
           (payload) => {
-            if (payload.new) handlers.onMessage?.(payload.new as RealtimeMessage)
+            const message = payload.new
+              ? messageFromPostgresPayload({ new: payload.new as Record<string, unknown> })
+              : null
+            if (message) handlers.onMessage?.(message)
           },
         )
         .on(
@@ -131,33 +179,22 @@ export const realtimeService = {
     handler: (message: RealtimeMessage) => void,
   ): Promise<Unsubscribe> {
     const debugLabel = `matchChat:${matchId.slice(0, 8)}`
+    const topic = `match:${matchId}`
 
-    chatRtLog('subscribeMatchChat start (postgres_changes)', { matchId })
+    chatRtLog('subscribeMatchChat start (broadcast)', { matchId, topic })
 
     void verifyMessagesRealtimeAccess(matchId)
 
-    const channel = await subscribePostgresChannel(
-      `messages:${matchId}`,
-      (ch) =>
-        ch.on(
-          'postgres_changes',
-          {
-            event: 'INSERT',
-            schema: 'public',
-            table: 'messages',
-            filter: `match_id=eq.${matchId}`,
-          },
-          (payload) => {
-            const message = payload.new
-              ? messageFromPostgresPayload({ new: payload.new as Record<string, unknown> })
-              : null
-            chatRtLog(`${debugLabel}: postgres event`, { parsed: message, raw: payload })
-            if (message && message.match_id === matchId) {
-              chatRtLog(`${debugLabel}: handler invoked`, { messageId: message.id })
-              handler(message)
-            }
-          },
-        ),
+    const channel = await subscribePrivateBroadcastChannel(topic, (ch) =>
+      ch.on('broadcast', { event: 'INSERT' }, ({ payload: change }) => {
+        if (change.table !== 'messages') return
+        const message = messageFromRecord(change.record as Record<string, unknown>)
+        chatRtLog(`${debugLabel}: broadcast event`, { parsed: message, raw: change })
+        if (message && message.match_id === matchId) {
+          chatRtLog(`${debugLabel}: handler invoked`, { messageId: message.id })
+          handler(message)
+        }
+      }),
       debugLabel,
     )
 
@@ -176,19 +213,14 @@ export const realtimeService = {
     matchId: string,
     handler: (message: RealtimeMessage) => void,
   ): Promise<Unsubscribe> {
-    const channel = await subscribePostgresChannel(`messages:${matchId}`, (ch) =>
-      ch.on(
-        'postgres_changes',
-        {
-          event: 'INSERT',
-          schema: 'public',
-          table: 'messages',
-          filter: `match_id=eq.${matchId}`,
-        },
-        (payload) => {
-          if (payload.new) handler(payload.new as RealtimeMessage)
-        },
-      ),
+    const topic = `match:${matchId}`
+
+    const channel = await subscribePrivateBroadcastChannel(topic, (ch) =>
+      ch.on('broadcast', { event: 'INSERT' }, ({ payload: change }) => {
+        if (change.table !== 'messages') return
+        const message = messageFromRecord(change.record as Record<string, unknown>)
+        if (message && message.match_id === matchId) handler(message)
+      }),
     )
 
     return () => {

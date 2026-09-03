@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.4",
-    "dotenv": "^17.4.2"
+    "dotenv": "^17.4.2",
+    "tsx": "^4.21.0"
   },
   "devDependencies": {
     "@types/node": "^24.13.3",
-    "tsx": "^4.21.0",
     "typescript": "~6.0.2"
   }
 }

@@ -1,47 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Luxury palette */
-  --violet-950: #140a1f;
-  --violet-900: #1e1030;
-  --violet-800: #2d1a47;
-  --violet-700: #4a3070;
-  --violet-500: #7b5ea7;
-  --violet-400: #9b7ec4;
+  /* Nocturne elegance palette */
+  --violet-950: #0d0712;
+  --violet-900: #140c1c;
+  --violet-800: #22152d;
+  --violet-700: #342342;
+  --violet-500: #8b6bc4;
+  --violet-400: #a88ad4;
 
-  --maroon-900: #2a0a14;
-  --maroon-800: #4a1028;
-  --maroon-700: #6b1d3a;
-  --maroon-600: #8b2942;
+  --maroon-900: #1a0610;
+  --maroon-800: #3d0e24;
+  --maroon-700: #7a1f42;
+  --maroon-600: #a32d54;
 
-  --gold-300: #e8d5a3;
-  --gold-400: #d4af37;
-  --gold-500: #c9a962;
-  --gold-600: #a68b4b;
+  --gold-300: #f0e0b0;
+  --gold-400: #e6ca65;
+  --gold-500: #d4af37;
+  --gold-600: #b89325;
 
   --cream: #f5f0e8;
-  --cream-muted: #c4bdb2;
-  --cream-dim: #8a8278;
+  --cream-muted: #bfa8b8;
+  --cream-dim: #8a7a88;
+  --mauve: #bfa8b8;
+  --mauve-light: #e2d5e2;
 
   --text-primary: var(--cream);
-  --text-muted: var(--cream-muted);
+  --text-muted: var(--mauve);
   --text-dim: var(--cream-dim);
 
-  --surface-card: rgba(45, 26, 71, 0.45);
-  --surface-input: rgba(20, 10, 31, 0.55);
-  --border-subtle: rgba(201, 169, 98, 0.14);
-  --border-accent: rgba(201, 169, 98, 0.35);
+  --surface-card: rgba(34, 21, 45, 0.88);
+  --surface-card-solid: #22152d;
+  --surface-elevated: #2a1a38;
+  --surface-input: rgba(13, 7, 18, 0.75);
+  --border-subtle: rgba(212, 175, 55, 0.16);
+  --border-strong: rgba(212, 175, 55, 0.28);
+  --border-accent: rgba(212, 175, 55, 0.4);
+
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
 
   --gradient-bg:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(123, 94, 167, 0.22), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(107, 29, 58, 0.18), transparent),
-    linear-gradient(180deg, var(--violet-950) 0%, var(--maroon-900) 55%, var(--violet-950) 100%);
+    radial-gradient(circle at 50% 20%, #22152d 0%, #140c1c 55%, #0d0712 100%);
 
-  --gradient-primary: linear-gradient(135deg, var(--maroon-700) 0%, var(--violet-700) 50%, var(--gold-600) 100%);
-  --gradient-gold: linear-gradient(135deg, var(--gold-500), var(--gold-300));
+  /* Stitch primary CTA — gold pill, dark ink */
+  --gradient-primary: linear-gradient(90deg, var(--gold-400) 0%, var(--gold-600) 100%);
+  --gradient-primary-hover: linear-gradient(90deg, #f0d878 0%, var(--gold-500) 100%);
+  --gradient-gold: linear-gradient(135deg, var(--cream) 0%, var(--gold-400) 100%);
+  --cta-ink: var(--violet-950);
 
-  --font-display: 'Bodoni Moda', 'Didot', 'Bodoni MT', Georgia, serif;
-  --font-body: 'Jost', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   color: var(--text-primary);
   background: var(--violet-950);
@@ -83,6 +94,6 @@ select {
 }
 
 ::selection {
-  background: rgba(201, 169, 98, 0.35);
-  color: var(--cream);
+  background: var(--gold-500);
+  color: var(--violet-950);
 }

@@ -264,15 +264,47 @@ Same pattern for session phase changes (`sessions` table) and incoming vibes (`v
 
 `web/vercel.json` rewrites all paths to `index.html` for client-side routing.
 
-### 2. Scheduler — persistent worker (not Vercel)
+### 2. Scheduler — Fly.io (recommended)
 
-Deploy `scheduler/` as a **long-running Node process**:
+Deploy `scheduler/` as a **background worker** (no HTTP port). Fly’s free allowance fits a single 256MB always-on process.
 
-| Platform | Setup |
+**One-time setup** (from repo root):
+
+```bash
+# Install CLI: https://fly.io/docs/hands-on/install-flyctl/
+cd scheduler
+fly auth login
+fly launch --no-deploy   # pick region near your Supabase project; keep app name or accept default
+fly secrets set \
+  SUPABASE_URL="https://YOUR_REF.supabase.co" \
+  SUPABASE_SECRET_KEY="your-service-role-key" \
+  SCHEDULER_WORKER_ID="fly-prod-1"
+fly deploy
+```
+
+**Logs / ops:**
+
+```bash
+fly logs
+fly status
+fly ssh console -C "node -e \"console.log('ok')\""
+```
+
+Healthy boot in logs:
+
+```
+[scheduler] starting {"workerId":"fly-prod-1"}
+[scheduler] bootstrapped ...
+[scheduler] realtime status {"status":"SUBSCRIBED"}
+```
+
+`scheduler/fly.toml` and `scheduler/Dockerfile` are checked in. Change `primary_region` in `fly.toml` if `fra` is far from Supabase.
+
+| Alternative | When |
 |---|---|
-| **Local / event laptop** | `cd scheduler && npm run dev` |
-| **Railway / Render / Fly** | Root: `scheduler`, start: `npm start`, env from `scheduler/.env.example` |
-| **VPS** | `npm start` under systemd or pm2 |
+| **Laptop** (`npm run dev`) | Event night, zero hosting cost |
+| **pg_cron only** | No worker; ~1 min phase lag (fallback already enabled) |
+| **Render / VPS** | Same `npm start`, env from `scheduler/.env.example` |
 
 **Environment variables:**
 
@@ -280,7 +312,7 @@ Deploy `scheduler/` as a **long-running Node process**:
 |---|---|
 | `SUPABASE_URL` | Project URL |
 | `SUPABASE_SECRET_KEY` | Service role key — never in the web app |
-| `SCHEDULER_WORKER_ID` | e.g. `railway-prod-1` (audit trail in `session_deadlines.nudged_by`) |
+| `SCHEDULER_WORKER_ID` | e.g. `fly-prod-1` (audit trail in `session_deadlines.nudged_by`) |
 
 One instance is enough for v0. Run a second instance only with leader election (not implemented yet).
 

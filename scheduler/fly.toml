@@ -1,0 +1,22 @@
+# fly.toml app configuration file generated for roomfull-scheduler on 2026-09-02T15:49:49+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'roomfull-scheduler'
+primary_region = 'fra'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  NODE_ENV = 'production'
+
+[processes]
+  app = 'npm start'
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256
