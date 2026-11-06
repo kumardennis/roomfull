@@ -60,7 +60,14 @@ export function usePlayScreen() {
     return playOrchestrator
       .refresh()
       .then((result) => {
-        if (result?.needsOpener) navigate('/opener', { replace: true })
+        if (!result?.needsOpener) return result
+
+        // Only gate on opener while that window is open. After the session
+        // advances, forcing /opener causes a play↔opener redirect loop.
+        const phase = result.sessionState.session.phase
+        if (phase === 'scheduled' || phase === 'opener') {
+          navigate('/opener', { replace: true })
+        }
         return result
       })
       .catch((err) => {
@@ -91,6 +98,14 @@ export function usePlayScreen() {
   })
 
   const openRound = sessionState?.open_round
+  const joinedAt = participantStore.getJoinedAt()
+  const waitingForNextRound = Boolean(
+    sessionState?.session.phase === 'round_live' &&
+      openRound &&
+      !openRound.my_answer &&
+      joinedAt !== null &&
+      joinedAt > Date.parse(openRound.opens_at),
+  )
   const showPredictionTally =
     openRound?.question.format === 'prediction' &&
     Boolean(openRound.my_answer) &&
@@ -145,6 +160,7 @@ export function usePlayScreen() {
     predictionTally,
     secondsLeft,
     phaseSecondsLeft,
+    waitingForNextRound,
     expandParticipant: playOrchestrator.expandParticipant,
     submitAnswer: playOrchestrator.submitAnswer,
     selectOption,

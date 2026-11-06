@@ -45,8 +45,8 @@ export function useOpenerScreen() {
     return openerOrchestrator
       .load()
       .then((result) => {
-        if (result.openerComplete) navigate('/play', { replace: true })
-        else if (result.phase !== 'scheduled' && result.phase !== 'opener') {
+        const inOpenerWindow = result.phase === 'scheduled' || result.phase === 'opener'
+        if (result.openerComplete || !inOpenerWindow) {
           navigate('/play', { replace: true })
         }
         return result

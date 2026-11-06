@@ -2,6 +2,7 @@ const TOKEN_KEY = 'roomfull_participant_token'
 const SESSION_KEY = 'roomfull_session_id'
 const PARTICIPANT_ID_KEY = 'roomfull_participant_id'
 const HANDLE_KEY = 'roomfull_handle'
+const JOINED_AT_KEY_PREFIX = 'roomfull_joined_at:'
 
 export const participantStore = {
   getToken(): string | null {
@@ -37,7 +38,27 @@ export const participantStore = {
     localStorage.setItem(HANDLE_KEY, handle)
   },
 
+  /** Keeps the first join time so a rejoin into the same participant doesn't reset it. */
+  markJoined(participantId: string) {
+    const key = JOINED_AT_KEY_PREFIX + participantId
+    if (!localStorage.getItem(key)) {
+      localStorage.setItem(key, String(Date.now()))
+    }
+  },
+
+  getJoinedAt(): number | null {
+    const participantId = this.getId()
+    if (!participantId) return null
+    const raw = localStorage.getItem(JOINED_AT_KEY_PREFIX + participantId)
+    const value = raw ? Number(raw) : NaN
+    return Number.isFinite(value) ? value : null
+  },
+
   clear() {
+    const participantId = this.getId()
+    if (participantId) {
+      localStorage.removeItem(JOINED_AT_KEY_PREFIX + participantId)
+    }
     localStorage.removeItem(TOKEN_KEY)
     localStorage.removeItem(SESSION_KEY)
     localStorage.removeItem(PARTICIPANT_ID_KEY)

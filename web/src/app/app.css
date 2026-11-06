@@ -17,6 +17,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-shadow: var(--glow-gold);
 }
 
 .app-header h1 {
@@ -60,6 +61,7 @@
   font-style: italic;
   letter-spacing: 0.01em;
   color: var(--gold-300);
+  text-shadow: var(--glow-gold);
 }
 
 .field {
@@ -704,10 +706,17 @@
 .check-in-header__brand {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 700;
   font-style: italic;
-  letter-spacing: 0.04em;
-  color: var(--cream);
+  letter-spacing: 0.06em;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 0 8px rgba(230, 202, 101, 0.65))
+    drop-shadow(0 0 22px rgba(212, 175, 55, 0.4));
 }
 
 .check-in-main {
@@ -1019,9 +1028,9 @@
   font-weight: 600;
   font-style: italic;
   letter-spacing: 0.01em;
-  font-weight: 600;
-  color: var(--gold-400);
   line-height: 1.3;
+  color: var(--gold-400);
+  text-shadow: var(--glow-gold);
 }
 
 .opener-card__prompt {
@@ -1265,16 +1274,24 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(212, 175, 55, 0.7);
+  color: var(--gold-400);
+  text-shadow: var(--glow-gold);
 }
 
 .roomfull-topbar__brand {
   font-family: var(--font-display);
   font-size: 1.35rem;
-  font-weight: 600;
+  font-weight: 700;
   font-style: italic;
-  letter-spacing: 0.04em;
-  color: var(--cream);
+  letter-spacing: 0.06em;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 0 8px rgba(230, 202, 101, 0.65))
+    drop-shadow(0 0 22px rgba(212, 175, 55, 0.4));
 }
 
 .roomfull-bottomnav {
@@ -1323,6 +1340,7 @@
   color: var(--gold-400);
   background: rgba(122, 31, 66, 0.35);
   box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.28);
+  text-shadow: var(--glow-gold);
 }
 
 /* Vibe queue screen */
@@ -1580,10 +1598,10 @@
   font-weight: 600;
   font-style: italic;
   letter-spacing: 0.01em;
-  font-weight: 600;
   line-height: 1.3;
   text-align: center;
   color: var(--gold-400);
+  text-shadow: var(--glow-gold);
 }
 
 .trivia-timer {
@@ -1613,9 +1631,8 @@
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  font-weight: 500;
   color: var(--gold-400);
-  text-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+  text-shadow: var(--glow-gold);
 }
 
 .trivia-loading {
@@ -1779,6 +1796,13 @@
   text-align: center;
   font-size: 0.85rem;
   color: rgba(245, 240, 232, 0.55);
+}
+
+.trivia-format-hint {
+  margin: -1rem 0 1.25rem;
+  text-align: center;
+  font-size: 0.88rem;
+  color: rgba(232, 213, 163, 0.75);
 }
 
 .prediction-tally {
@@ -2179,18 +2203,21 @@
 }
 
 .reveal-hidden.chat-match-row__avatar,
-.reveal-hidden.chat-thread-header__avatar {
+.reveal-hidden.chat-thread-header__avatar,
+.reveal-hidden.floating-chats__head {
   filter: blur(8px);
   opacity: 0.5;
 }
 
 .reveal-blurred.chat-match-row__avatar,
-.reveal-blurred.chat-thread-header__avatar {
+.reveal-blurred.chat-thread-header__avatar,
+.reveal-blurred.floating-chats__head {
   filter: blur(3px);
 }
 
 .reveal-revealed.chat-match-row__avatar .vibe-orb-ring,
-.reveal-revealed.chat-thread-header__avatar .vibe-orb-ring {
+.reveal-revealed.chat-thread-header__avatar .vibe-orb-ring,
+.reveal-revealed.floating-chats__head .vibe-orb-ring {
   box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.35);
 }
 
@@ -2371,4 +2398,92 @@
 .chat-compose__send {
   padding-inline: 1.25rem;
   min-width: 4.5rem;
+}
+
+/* Floating chat-room heads (app-wide) */
+.floating-chats {
+  position: fixed;
+  top: calc(4.25rem + env(safe-area-inset-top, 0px));
+  right: 0.65rem;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  pointer-events: none;
+}
+
+.floating-chats > * {
+  pointer-events: auto;
+}
+
+.floating-chats__head {
+  position: relative;
+  width: 3.1rem;
+  height: 3.1rem;
+  padding: 0;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 999px;
+  background: rgba(34, 21, 45, 0.92);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.floating-chats__head:hover {
+  transform: scale(1.06);
+  border-color: rgba(230, 202, 101, 0.75);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.5),
+    0 0 16px rgba(212, 175, 55, 0.25);
+}
+
+.floating-chats__head:active {
+  transform: scale(0.96);
+}
+
+.floating-chats__head--active {
+  border-color: var(--gold-400);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(212, 175, 55, 0.35);
+}
+
+.floating-chats__head .vibe-orb-ring {
+  width: 2.55rem;
+  height: 2.55rem;
+}
+
+.floating-chats__head .vibe-orb-core {
+  width: 2rem;
+  height: 2rem;
+}
+
+.floating-chats__more {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  background: rgba(26, 16, 38, 0.95);
+  color: var(--gold-300);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.floating-chats__more:hover {
+  transform: scale(1.06);
+  border-color: rgba(230, 202, 101, 0.7);
+  color: var(--gold-400);
 }

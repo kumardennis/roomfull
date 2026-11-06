@@ -15,10 +15,36 @@ function matchesAnswerFilter(entry: LeaderboardEntry, answerFilter: string | nul
 }
 
 function formatQuestionFormat(format: string) {
-  return format
-    .split('_')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
+  switch (format) {
+    case 'this_or_that':
+      return 'This or that'
+    case 'hot_take':
+      return 'Hot take'
+    case 'prediction':
+      return 'Prediction'
+    case 'two_truths_one_lie':
+      return 'Two truths, one lie'
+    case 'superlative':
+      return 'Who in the room'
+    case 'red_flag_green_flag':
+      return 'Red or green'
+    default:
+      return format
+        .split('_')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ')
+  }
+}
+
+function formatHint(format: string): string | null {
+  switch (format) {
+    case 'two_truths_one_lie':
+      return 'Which one is the lie?'
+    case 'superlative':
+      return 'Pick someone else in the room.'
+    default:
+      return null
+  }
 }
 
 function formatCountdown(seconds: number | null) {
@@ -70,6 +96,7 @@ export function PlayScreen() {
     error,
     secondsLeft,
     phaseSecondsLeft,
+    waitingForNextRound,
     expandParticipant,
     selectOption,
     submitAnswer,
@@ -310,6 +337,22 @@ export function PlayScreen() {
       return renderStatusCard('Stand by', 'The next round is about to start.')
     }
 
+    if (waitingForNextRound) {
+      return (
+        <>
+          {renderStatusCard(
+            'Wait for the next round',
+            `This round started before you joined. It ends${
+              secondsLeft !== null ? ` in ${formatCountdown(secondsLeft)}` : ' soon'
+            }. You'll play from the next one.`,
+          )}
+          {topLeaders.length > 0 || leaderboardFilter
+            ? renderRosterSection({ entries: topLeaders })
+            : null}
+        </>
+      )
+    }
+
     return (
       <>
         <section className="trivia-glass-card">
@@ -323,26 +366,38 @@ export function PlayScreen() {
 
           <p className="trivia-question-prompt">{round.question.prompt}</p>
 
-          <div className="trivia-options">
-            {(round.question.options ?? []).map((option) => {
-              const isSelected = lockedAnswer === option
-              const isLocked = hasAnswered
+          {formatHint(round.question.format) ? (
+            <p className="trivia-format-hint">{formatHint(round.question.format)}</p>
+          ) : null}
 
-              return (
-                <button
-                  key={option}
-                  type="button"
-                  className={`trivia-option${isSelected ? ' trivia-option--selected' : ''}${
-                    isLocked && !isSelected ? ' trivia-option--dimmed' : ''
-                  }`}
-                  disabled={submitting || isLocked}
-                  onClick={() => void selectOption(option)}
-                >
-                  {option}
-                </button>
-              )
-            })}
-          </div>
+          {(round.question.options ?? []).length === 0 ? (
+            <p className="trivia-format-hint">
+              {round.question.format === 'superlative'
+                ? 'Need more people in the room before you can vote.'
+                : 'No options for this round yet.'}
+            </p>
+          ) : (
+            <div className="trivia-options">
+              {(round.question.options ?? []).map((option) => {
+                const isSelected = lockedAnswer === option
+                const isLocked = hasAnswered
+
+                return (
+                  <button
+                    key={option}
+                    type="button"
+                    className={`trivia-option${isSelected ? ' trivia-option--selected' : ''}${
+                      isLocked && !isSelected ? ' trivia-option--dimmed' : ''
+                    }`}
+                    disabled={submitting || isLocked}
+                    onClick={() => void selectOption(option)}
+                  >
+                    {option}
+                  </button>
+                )
+              })}
+            </div>
+          )}
 
           {!hasAnswered && needsSelfReport ? (
             <>

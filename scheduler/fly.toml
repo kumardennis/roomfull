@@ -15,6 +15,12 @@ primary_region = 'fra'
 [processes]
   app = 'npm start'
 
+# Always-on worker (no http_service → Fly Proxy won't autostop).
+# Restart after host reboots / process exits.
+[[restart]]
+  policy = 'always'
+  retries = 10
+
 [[vm]]
   memory = '256mb'
   cpu_kind = 'shared'

@@ -165,6 +165,8 @@ cd scheduler && npm start
 
 **Do not deploy the scheduler to Vercel serverless or cron.** Vercel Functions are request-scoped; sub-second phase transitions need a process that holds timers and a Realtime connection.
 
+After `fly deploy`, confirm the machine is **started** (`fly status`). If it shows `stopped`, run `fly machine start` — a stopped worker means only `pg_cron` advances rounds (~1 min lag). `fly.toml` sets `restart = always` so the process comes back after host reboots.
+
 `pg_cron` remains a safety net only — not the hot path.
 
 ---

@@ -21,6 +21,7 @@ export const checkInOrchestrator = {
         result.participant_id,
         result.handle,
       )
+      participantStore.markJoined(result.participant_id)
       await authService.linkParticipant(result.participant_token)
       return { ok: true }
     } catch (err) {

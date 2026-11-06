@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useChrome } from '../../chrome'
 import { chatRealtimeBridge } from '../../features/chat/chat-realtime-bridge'
+import { matchesOrchestrator } from '../../features/chat/orchestration/matches.orchestrator'
 import { chatRtLog } from '../realtime/chat-realtime-debug'
 import { realtimeService } from '../realtime/realtime.service'
 import { authService } from '../session/auth.service'
@@ -51,6 +52,7 @@ export function useAppNotifications() {
           if (match.participant_a !== participantId && match.participant_b !== participantId) {
             return
           }
+          void matchesOrchestrator.refresh().catch(() => undefined)
           const pathname = pathnameRef.current
           if (pathname === `/chat/${match.id}` || pathname === '/matches') return
 

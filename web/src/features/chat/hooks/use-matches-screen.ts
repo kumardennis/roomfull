@@ -33,8 +33,6 @@ export function useMatchesScreen() {
       .finally(() => {
         useMatchesStore.setState({ loading: false })
       })
-
-    return () => matchesOrchestrator.reset()
   }, [navigate])
 
   useEffect(() => {

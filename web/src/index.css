@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Nocturne elegance palette */
@@ -51,7 +51,14 @@
   --gradient-gold: linear-gradient(135deg, var(--cream) 0%, var(--gold-400) 100%);
   --cta-ink: var(--violet-950);
 
-  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  /* Soft gold halo for accent type */
+  --glow-gold:
+    0 0 10px rgba(230, 202, 101, 0.55),
+    0 0 24px rgba(212, 175, 55, 0.35),
+    0 0 40px rgba(212, 175, 55, 0.18);
+
+  /* Stitch landing: Georgia display + Inter body */
+  --font-display: Georgia, Cambria, 'Times New Roman', Times, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   color: var(--text-primary);
@@ -96,4 +103,20 @@ select {
 ::selection {
   background: var(--gold-500);
   color: var(--violet-950);
+}
+
+/* Stitch landing gold accent type */
+.gold-gradient-text {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter:
+    drop-shadow(0 0 8px rgba(230, 202, 101, 0.65))
+    drop-shadow(0 0 22px rgba(212, 175, 55, 0.4));
+}
+
+.text-glow-gold {
+  text-shadow: var(--glow-gold);
 }
