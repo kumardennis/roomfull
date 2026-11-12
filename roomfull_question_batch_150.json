@@ -1,0 +1,1422 @@
+[
+  {
+    "format": "this_or_that",
+    "prompt": "Window seat or aisle seat?",
+    "options": [
+      "Window seat",
+      "Aisle seat"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Sunrise hike or sunset walk?",
+    "options": [
+      "Sunrise hike",
+      "Sunset walk"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Cook at home or eat out?",
+    "options": [
+      "Cook at home",
+      "Eat out"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Call or text?",
+    "options": [
+      "Call",
+      "Text"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Voice message or typed message?",
+    "options": [
+      "Voice message",
+      "Typed message"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Plan everything or wing it?",
+    "options": [
+      "Plan everything",
+      "Wing it"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Big party or small hangout?",
+    "options": [
+      "Big party",
+      "Small hangout"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Movie night or game night?",
+    "options": [
+      "Movie night",
+      "Game night"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Sweet snack or salty snack?",
+    "options": [
+      "Sweet snack",
+      "Salty snack"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Coffee or tea?",
+    "options": [
+      "Coffee",
+      "Tea"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Summer or winter?",
+    "options": [
+      "Summer",
+      "Winter"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Mountains or sea?",
+    "options": [
+      "Mountains",
+      "Sea"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Chat at the bar or dance all night?",
+    "options": [
+      "Chat at the bar",
+      "Dance all night"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Pancakes or waffles?",
+    "options": [
+      "Pancakes",
+      "Waffles"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Books or podcasts?",
+    "options": [
+      "Books",
+      "Podcasts"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Tiny dog or huge dog?",
+    "options": [
+      "Tiny dog",
+      "Huge dog"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Same meal forever or never repeat one?",
+    "options": [
+      "Same meal forever",
+      "Never repeat a meal"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Be the DJ or be the dancer?",
+    "options": [
+      "Be the DJ",
+      "Be the dancer"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Cinema or couch?",
+    "options": [
+      "Cinema",
+      "Couch"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Early dinner or late dinner?",
+    "options": [
+      "Early dinner",
+      "Late dinner"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Stairs or elevator?",
+    "options": [
+      "Stairs",
+      "Elevator"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Sneakers or boots?",
+    "options": [
+      "Sneakers",
+      "Boots"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Hot shower or cold shower?",
+    "options": [
+      "Hot shower",
+      "Cold shower"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Road trip or flight?",
+    "options": [
+      "Road trip",
+      "Flight"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Camping or hotel?",
+    "options": [
+      "Camping",
+      "Hotel"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Tell the story or hear the story?",
+    "options": [
+      "Tell the story",
+      "Hear the story"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Surprise party or planned party?",
+    "options": [
+      "Surprise party",
+      "Planned party"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Always online or mostly offline?",
+    "options": [
+      "Always online",
+      "Mostly offline"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Group chat or one-on-one chat?",
+    "options": [
+      "Group chat",
+      "One-on-one chat"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "What's your walk-up song vibe?",
+    "options": [
+      "Epic and dramatic",
+      "Silly and chaotic"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Pizza or burger?",
+    "options": [
+      "Pizza",
+      "Burger"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Rain or sunshine?",
+    "options": [
+      "Rain",
+      "Sunshine"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Quiet corner or center stage?",
+    "options": [
+      "Quiet corner",
+      "Center stage"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Quick goodbye or long goodbye?",
+    "options": [
+      "Quick goodbye",
+      "Long goodbye"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Speak every language or play every instrument?",
+    "options": [
+      "Speak every language",
+      "Play every instrument"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "One horse-sized duck or 100 duck-sized horses?",
+    "options": [
+      "Horse-sized duck",
+      "100 duck-sized horses"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "One alarm or many snoozes?",
+    "options": [
+      "One alarm",
+      "Many snoozes"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Play to win or play for fun?",
+    "options": [
+      "Play to win",
+      "Play for fun"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Old songs or new songs?",
+    "options": [
+      "Old songs",
+      "New songs"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "this_or_that",
+    "prompt": "Teleport or fly?",
+    "options": [
+      "Teleport",
+      "Fly"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Pickles are underrated",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Cats are better than dogs",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Breakfast food is best at dinner time",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Sparkling water beats still water",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Reply-all emails should be illegal",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Voice messages are rude",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Ketchup on eggs is totally fine",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Mornings are overrated",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Reclining your airplane seat is fine",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Leaving a party without saying goodbye is fine",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Group photos should be one shot, not twenty",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Everyone should sing karaoke at least once",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Spoilers are not that big a deal",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Rewatching beats watching something new",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "The best part of a trip is the planning",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Cold pizza is better than hot pizza",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Mint chocolate is delicious",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Winter is the best season",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Shuffle beats a carefully made playlist",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "You should always walk on escalators",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Clapping when the plane lands is fine",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Open-plan offices are a bad idea",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Board games beat video games for a night in",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "A night in beats a night out",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Nobody actually likes surprise parties",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Emojis are a legitimate language",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Whoever holds the aux cord holds the power",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Sharing food off your plate is fine",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Karaoke is better with strangers than friends",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Soft cookies beat crunchy cookies",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Hotel breakfast buffets are the best meal of a trip",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Standing desks are mostly a gimmick",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Cutting a queue is never okay",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "Everyone should have one signature dish",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "hot_take",
+    "prompt": "The shower is where the best ideas happen",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Disagree",
+      "Strongly disagree"
+    ],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to befriend a stranger's dog in under a minute?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to still be dancing when the lights come on?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to have a playlist for every mood?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to win an argument with a parking machine?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to end up in a stranger's group photo?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to own five chargers and still be at 1%?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to learn the bartender's whole life story?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to start a conga line?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to give a toast nobody asked for?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to know the lyrics to every song that plays?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to say \"one more song\" three times?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to plan the group trip nobody else will?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to leave a group chat on read for a week?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to bring snacks nobody asked for?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to adopt a stray cat on holiday?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to lose their keys while holding them?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to give confident directions and be wrong?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to turn a quiet evening into a legend?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to charm a friend's grandma in minutes?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to recommend a podcast within five minutes?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to survive a week without their phone?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to cry at a commercial about a dog?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to be on first-name terms with the staff?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to invent their own signature dance move?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "superlative",
+    "prompt": "Who here is most likely to win a staring contest with a seagull?",
+    "options": [],
+    "correct_option": null,
+    "self_report_prompt": null,
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here are night owls?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Are you a night owl?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here hit snooze more than once?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you usually hit snooze more than once?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here sing in the shower?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you sing in the shower?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have a playlist for every mood?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you have a playlist for every mood?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here talk to themselves out loud?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you talk to yourself out loud?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have 100+ unread emails?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you have 100+ unread emails?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have left a party without saying goodbye?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Have you ever left a party without saying goodbye?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here read terms and conditions?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you ever read terms and conditions?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have a cracked phone screen right now?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Is your phone screen cracked right now?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have a hoodie they wear weekly?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you have a hoodie you wear weekly?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here reply to texts within an hour?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you usually reply to texts within an hour?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have rewatched a movie this month?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Have you rewatched a movie this month?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here arrive early to things?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you usually arrive early?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have sung karaoke?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Have you ever sung karaoke?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here like pineapple on pizza?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you like pineapple on pizza?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have been to a concert this year?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Have you been to a concert this year?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here own 3+ pairs of sneakers?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you own 3+ pairs of sneakers?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here cook at home most nights?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you cook at home most nights?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have a nickname they like?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you have a nickname you like?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have a houseplant that's still alive?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you have a houseplant that's still alive?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here check their phone first thing in the morning?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you check your phone first thing?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here can whistle?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Can you whistle?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here can juggle anything?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Can you juggle anything?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here usually take the stairs?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Do you usually take the stairs?",
+    "is_local": false
+  },
+  {
+    "format": "prediction",
+    "prompt": "What percentage of people here have visited 5+ countries?",
+    "options": [
+      "0-25%",
+      "26-50%",
+      "51-75%",
+      "76-100%"
+    ],
+    "correct_option": null,
+    "self_report_prompt": "Have you visited 5+ countries?",
+    "is_local": false
+  }
+]

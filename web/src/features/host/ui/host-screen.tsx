@@ -12,6 +12,10 @@ export function HostScreen() {
     sessionId,
     setSessionId,
     session,
+    roundCountInput,
+    setRoundCountInput,
+    setRoundCount,
+    notice,
     loading,
     error,
     loadSession,
@@ -30,6 +34,9 @@ export function HostScreen() {
       session.phase === 'round_interstitial' ||
       session.phase === 'scheduled')
   const canEndRoundSoon = session?.phase === 'round_live'
+  const canEditPlan =
+    session != null && session.status !== 'ended' && session.phase !== 'social' && session.phase !== 'ended'
+  const playedCount = session?.round_progress.current ?? 0
 
   return (
     <AppLayout title="Host" subtitle="Emergency controls only" showNav={false}>
@@ -72,6 +79,34 @@ export function HostScreen() {
               <button className="btn ghost" type="button" onClick={() => void forceEnd()} disabled={loading}>
                 End session
               </button>
+            </div>
+
+            <div className="stack">
+              <label className="field">
+                <span>Number of questions</span>
+                <input
+                  type="number"
+                  inputMode="numeric"
+                  min={Math.max(playedCount, 1)}
+                  max={100}
+                  value={roundCountInput}
+                  disabled={!canEditPlan}
+                  onChange={(e) => setRoundCountInput(e.target.value)}
+                />
+              </label>
+              <p className="muted">
+                Replaces the questions not played yet with a random mix from the bank.
+                {playedCount > 0 ? ` The ${playedCount} already played stay.` : ''}
+              </p>
+              <button
+                className="btn ghost"
+                type="button"
+                disabled={loading || !canEditPlan || !roundCountInput}
+                onClick={() => void setRoundCount()}
+              >
+                Set questions
+              </button>
+              {notice ? <p className="muted">{notice}</p> : null}
             </div>
 
             {session.round_plan.length > 0 ? (

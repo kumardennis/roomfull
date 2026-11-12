@@ -17,7 +17,12 @@ export const hostOrchestrator = {
     hostStore.patch({ loading: true, error: null })
     try {
       const session = await hostRepo.getSession(hostPin, sessionId)
-      hostStore.patch({ session })
+      hostStore.patch({
+        session,
+        ...(hostStore.getState().roundCountInput === ''
+          ? { roundCountInput: String(session.round_plan.length) }
+          : {}),
+      })
     } catch (err) {
       hostStore.patch({
         error: err instanceof Error ? err.message : 'Could not load host session',
@@ -70,6 +75,39 @@ export const hostOrchestrator = {
     } catch (err) {
       hostStore.patch({
         error: err instanceof Error ? err.message : 'Could not end session',
+      })
+      hostStore.patch({ loading: false })
+    }
+  },
+
+  setRoundCountInput(roundCountInput: string) {
+    hostStore.patch({ roundCountInput, notice: null })
+  },
+
+  async setRoundCount() {
+    const { hostPin, sessionId, roundCountInput } = hostStore.getState()
+    if (!hostPin || !sessionId) return
+
+    const roundCount = Number.parseInt(roundCountInput, 10)
+    if (!Number.isFinite(roundCount)) {
+      hostStore.patch({ error: 'Enter a number of questions.' })
+      return
+    }
+
+    hostStore.patch({ loading: true, error: null, notice: null })
+    try {
+      const result = await hostRepo.setRoundCount(hostPin, sessionId, roundCount)
+      hostStore.patch({
+        roundCountInput: String(result.total),
+        notice:
+          result.total < result.requested
+            ? `Only ${result.total} questions available in the bank.`
+            : `Plan set to ${result.total} questions.`,
+      })
+      await hostOrchestrator.loadSession()
+    } catch (err) {
+      hostStore.patch({
+        error: err instanceof Error ? err.message : 'Could not set question count',
       })
       hostStore.patch({ loading: false })
     }

@@ -5,6 +5,8 @@ export type HostState = {
   hostPin: string
   sessionId: string
   session: HostSession | null
+  roundCountInput: string
+  notice: string | null
   loading: boolean
   error: string | null
 }
@@ -20,6 +22,8 @@ export const initialHostState: HostState = {
   hostPin: 'fox2026',
   sessionId: '',
   session: null,
+  roundCountInput: '',
+  notice: null,
   loading: false,
   error: null,
 }

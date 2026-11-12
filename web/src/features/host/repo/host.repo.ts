@@ -59,6 +59,17 @@ export const hostRepo = {
     })
   },
 
+  setRoundCount(hostPin: string, sessionId: string, roundCount: number) {
+    return callRpc<{ session_id: string; requested: number; total: number; kept: number }>(
+      'host_set_round_count',
+      {
+        p_host_pin: hostPin,
+        p_session_id: sessionId,
+        p_round_count: roundCount,
+      },
+    )
+  },
+
   devResetSession(
     hostPin: string,
     sessionId: string,

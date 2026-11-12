@@ -7,11 +7,13 @@ import { useHostStore } from '../store/host.store'
 export function useHostScreen() {
   const [searchParams] = useSearchParams()
 
-  const { hostPin, sessionId, session, loading, error } = useHostStore(
+  const { hostPin, sessionId, session, roundCountInput, notice, loading, error } = useHostStore(
     useShallow((s) => ({
       hostPin: s.hostPin,
       sessionId: s.sessionId,
       session: s.session,
+      roundCountInput: s.roundCountInput,
+      notice: s.notice,
       loading: s.loading,
       error: s.error,
     })),
@@ -38,6 +40,10 @@ export function useHostScreen() {
     sessionId,
     setSessionId: hostOrchestrator.setSessionId,
     session,
+    roundCountInput,
+    setRoundCountInput: hostOrchestrator.setRoundCountInput,
+    setRoundCount: hostOrchestrator.setRoundCount,
+    notice,
     loading,
     error,
     loadSession: hostOrchestrator.loadSession,

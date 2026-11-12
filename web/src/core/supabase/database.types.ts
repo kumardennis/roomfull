@@ -668,6 +668,10 @@ export type Database = {
         Args: { p_host_pin: string; p_session_id: string }
         Returns: Json
       }
+      host_set_round_count: {
+        Args: { p_host_pin: string; p_round_count: number; p_session_id: string }
+        Returns: Json
+      }
       is_match_participant: { Args: { p_match_id: string }; Returns: boolean }
       join_session: {
         Args: { p_handle?: string; p_qr_code: string }
